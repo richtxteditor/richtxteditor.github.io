@@ -1,14 +1,13 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - richtxteditor 
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - richtxteditor/fusion-manaba-frontend
+  - richtxteditor/fusion-manaba-backend
+  - richtxteditor/Developer-Portfolio-Platform 
+  - richtxteditor/dsa
+  - richtxteditor/Client-Server-Chat-System-with-Enhanced-TCP-Protocol
+  - richtxteditor/spiderman-eshop
+  - richtxteditor/Uni-Student-Class-Registration
