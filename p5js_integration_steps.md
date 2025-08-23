@@ -23,37 +23,37 @@ This file will contain your p5.js sketch logic, including dynamic color adaptati
 2.  Add the following basic structure to this file. This code includes placeholders for dynamic color logic:
 
     ```javascript
-    let sketch = function(p) {
+    let sketch = function (p) {
       let bgColor, elementColor;
 
-      p.setup = function() {
+      p.setup = function () {
         let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
         canvas.position(0, 0);
-        canvas.style('z-index', '-1');
-        canvas.style('pointer-events', 'none');
+        canvas.style("z-index", "-1");
+        canvas.style("pointer-events", "none");
         p.pixelDensity(1);
         p.updateColors(); // Initial color update
       };
 
-      p.draw = function() {
+      p.draw = function () {
         p.background(bgColor);
         // Your subtle interactive background drawing code will go here
         // Use elementColor for drawing elements that should contrast with the background
       };
 
-      p.windowResized = function() {
+      p.windowResized = function () {
         p.resizeCanvas(p.windowWidth, p.windowHeight);
       };
 
-      p.updateColors = function() {
+      p.updateColors = function () {
         // Function to get CSS variable values
         const getCssVar = (name) => {
           return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
         };
 
         // Read colors from CSS variables
-        bgColor = getCssVar('--global-bg-color');
-        elementColor = getCssVar('--global-text-color');
+        bgColor = getCssVar("--global-bg-color");
+        elementColor = getCssVar("--global-text-color");
 
         // Fallback for debugging or if variables are not found
         if (!bgColor) bgColor = p.color(255); // Default light background
@@ -68,7 +68,7 @@ This file will contain your p5.js sketch logic, including dynamic color adaptati
       // Observe changes to the HTML element's attributes (like data-theme)
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
-          if (mutation.type === 'attributes' && (mutation.attributeName === 'data-theme' || mutation.attributeName === 'class')) {
+          if (mutation.type === "attributes" && (mutation.attributeName === "data-theme" || mutation.attributeName === "class")) {
             p.updateColors();
           }
         });
@@ -134,19 +134,19 @@ Once the basic setup is complete, you can add your desired subtle interactive ba
 **Example of a subtle sketch (replace `p.draw` content):**
 
 ```javascript
-      p.draw = function() {
-        p.background(bgColor);
+p.draw = function () {
+  p.background(bgColor);
 
-        // Example: Slowly moving particles
-        p.noStroke();
-        p.fill(elementColor, 50); // Semi-transparent elements
-        for (let i = 0; i < 50; i++) {
-          let x = (p.noise(p.frameCount * 0.005 + i * 0.1) * p.width);
-          let y = (p.noise(p.frameCount * 0.005 + i * 0.1 + 1000) * p.height);
-          let size = p.noise(p.frameCount * 0.01 + i * 0.2) * 20 + 5;
-          p.ellipse(x, y, size, size);
-        }
-      };
+  // Example: Slowly moving particles
+  p.noStroke();
+  p.fill(elementColor, 50); // Semi-transparent elements
+  for (let i = 0; i < 50; i++) {
+    let x = p.noise(p.frameCount * 0.005 + i * 0.1) * p.width;
+    let y = p.noise(p.frameCount * 0.005 + i * 0.1 + 1000) * p.height;
+    let size = p.noise(p.frameCount * 0.01 + i * 0.2) * 20 + 5;
+    p.ellipse(x, y, size, size);
+  }
+};
 ```
 
 ### Step 7: Test
