@@ -86,8 +86,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: My blog # blog_name will be displayed in your blog page
+blog_description: musings about technology, art, and the mind.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -360,6 +360,7 @@ imagemagick:
     - ".png"
     - ".tiff"
     - ".gif"
+    - ".png"
   output_formats:
     webp: "-quality 85"
 
