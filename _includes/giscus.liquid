@@ -15,7 +15,9 @@
         src: 'https://giscus.app/client.js',
         'data-repo': '{{ site.giscus.repo }}',
         'data-repo-id': '{{ site.giscus.repo_id }}',
+        {% if site.giscus.category %}
         'data-category': '{{ site.giscus.category }}',
+        {% endif %}
         'data-category-id': '{{ site.giscus.category_id }}',
         'data-mapping': '{{ site.giscus.mapping }}',
         'data-strict': '{{ site.giscus.strict }}',

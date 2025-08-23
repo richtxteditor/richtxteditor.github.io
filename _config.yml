@@ -88,8 +88,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Constructed Realities # blog_name will be displayed in your blog page
-blog_description: Unpacking the blueprints of digital creation. I navigate the frontiers of UI/UX, full-stack
-  development, and Agentic AI, crafting realities where art and logic converge.
+blog_description: Unpacking the blueprints of digital creation. I navigate the frontiers of UI/UX, full-stack development, and Agentic AI, crafting realities where art and logic converge.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -103,18 +102,21 @@ related_blog_posts:
 
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
+# _config.yml
 giscus:
-  repo: # <your-github-user-name>/<your-github-repo-name>
-  repo_id: # leave empty or specify your repo_id (see https://giscus.app/)
-  category: Comments # name of the category under which discussions will be created
-  category_id: # leave empty or specify your category_id (see https://giscus.app/)
-  mapping: title # identify discussions by post title
-  strict: 1 # use strict identification mode
-  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
-  input_position: bottom # whether to display input form below (bottom) or above (top) the comments
-  theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
-  emit_metadata: 0
-  lang: en
+  repo: "richtxteditor/richtxteditor.github.io"
+  repo_id: "R_kgDOPinJNQ"
+  # Note: You can add the category name here for your own reference, but the ID is the crucial part.
+  # category: "Announcements"
+  category_id: "DIC_kwDOPinJNc4Cufx7"
+  mapping: "pathname"
+  strict: "0"
+  reactions_enabled: "1"
+  emit_metadata: "1"
+  input_position: "top"
+  theme: "preferred_color_scheme"
+  lang: "en"
+  loading: "lazy"
 
 # Disqus comments (DEPRECATED)
 disqus_shortname: al-folio # put your disqus shortname
@@ -217,12 +219,25 @@ plugins:
   - jekyll-twitter-plugin
   - jemoji
 
-# Sitemap settings
+# Sitemap and Front Matter Defaults
 defaults:
+  # Exclude assets from the sitemap
   - scope:
       path: "assets"
     values:
       sitemap: false
+  # Automatically enable comments for all blog posts
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      giscus_comments: true
+  # Automatically enable comments for all projects
+  - scope:
+      path: "_projects"
+      type: "projects"
+    values:
+      giscus_comments: true
 
 sass:
   style: compressed
