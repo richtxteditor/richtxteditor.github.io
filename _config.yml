@@ -7,9 +7,10 @@ first_name: John
 middle_name: R.
 last_name: Molina
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  The best way to reach me is via email. Please make sure to fill out the subject line!
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Explore the work of John R. Molina, a software engineer and designer who blends a creative
+  background in music and film with technical expertise in full-stack development and UI/UX.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -86,8 +87,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: My blog # blog_name will be displayed in your blog page
-blog_description: musings about technology, art, and the mind.
+blog_name: Constructed Realities # blog_name will be displayed in your blog page
+blog_description: Unpacking the blueprints of digital creation. I navigate the frontiers of UI/UX, full-stack
+  development, and Agentic AI, crafting realities where art and logic converge.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
