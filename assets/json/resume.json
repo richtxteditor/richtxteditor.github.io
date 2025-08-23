@@ -111,13 +111,12 @@
   "interests": [
     {
       "name": "AI in Tech",
-      "keywords": ["AI Tooling", "Software Development"] 
+      "keywords": ["AI Tooling", "Software Development"]
     },
     {
       "name": "Video Games",
       "keywords": ["The Legend of Zelda", "Final Fnatasy", "Apex Legends", "Sea of Thieves"]
     }
-     
   ],
   "references": []
 }

@@ -2,16 +2,16 @@
 layout: book-review
 title: House of Leaves
 author: Mark Z. Danielewski
-cover: 
+cover:
 isbn: 9780375703768
 categories: horror experimental-fiction psychological-thriller
-tags: 
-buy_link: 
-started: 
-finished: 
+tags:
+buy_link:
+started:
+finished:
 released: 2000
-stars: 
-goodreads_review: 
+stars:
+goodreads_review:
 status: To Read
 ---
 

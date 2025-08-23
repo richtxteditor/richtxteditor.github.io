@@ -1,12 +1,12 @@
 github_users:
-  - richtxteditor 
+  - richtxteditor
 
 repo_description_lines_max: 2
 
 github_repos:
   - richtxteditor/fusion-manaba-frontend
   - richtxteditor/fusion-manaba-backend
-  - richtxteditor/Developer-Portfolio-Platform 
+  - richtxteditor/Developer-Portfolio-Platform
   - richtxteditor/dsa
   - richtxteditor/Client-Server-Chat-System-with-Enhanced-TCP-Protocol
   - richtxteditor/spiderman-eshop
