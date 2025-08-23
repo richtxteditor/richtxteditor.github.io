@@ -414,11 +414,11 @@ ninja.data = [{
             window.location.href = "/blog/2015/formatting-and-links/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
+      },{id: "books-house-of-leaves",
+          title: 'House of Leaves',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
+              window.location.href = "/books/house_of_leaves/";
             },},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
@@ -481,6 +481,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("mailto:%6A%72%6D%39%30@%6D%65.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-flickr',
+        title: 'Flickr',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.flickr.com/203373029@N03", "_blank");
         },
       },{
         id: 'social-github',
