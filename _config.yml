@@ -7,7 +7,7 @@ first_name: John
 middle_name: R.
 last_name: Molina
 contact_note: >
-  The best way to reach me is via email. Please make sure to fill out the subject line!
+  The best way to reach me is via <a href="mailto:jrm90@me.com">email</a>. Please make sure to fill out the subject line!
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Explore the work of John R. Molina, a software engineer and designer who blends a creative
   background in music and film with technical expertise in full-stack development and UI/UX.
