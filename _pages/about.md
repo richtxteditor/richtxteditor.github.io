@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='/cv/'>Affiliations</a>.<a href='/projects/'> Recent work</a>. Be the change you wish to see in the world.
+subtitle: <a href='/cv/'>Affiliations</a>. <a href='/projects/'>Recent work</a>. Be the change you wish to see in the world.
 
 profile:
   align: right
@@ -26,6 +26,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My journey into technology began in the arts, studying music at [New Jersey City University (NJCU)](https://www.njcu.edu) and film at the [School of Visual Arts (SVA)](https://sva.edu). This creative foundation in storytelling and user experience now informs my work as a software engineer and designer. After transitioning to computer science at [Montclair State University (MSU)](https://www.montclair.edu), I found a new medium for my passion for building things.
+My journey into technology began in the arts, studying media arts at [New Jersey City University (NJCU)](https://www.njcu.edu) and film at the [School of Visual Arts (SVA)](https://sva.edu) during my soul-searching undergraduate years. This creative foundation in storytelling inspires my work as a software engineer and designer. After transitioning to computer science at [Montclair State University (MSU)](https://www.montclair.edu), I have found my canvas for building memorable experiences.
 
-Today, I specialize in UI/UX and full-stack development, with a keen interest in how AI is transforming the field. When I'm not coding, you can find me exploring the rich worlds of video games, which constantly inspire my creative and technical projects.
+I specialize in UI/UX and full-stack development, with a deep interest in how agentic AI is transforming the world. When I'm not coding, you can find me exploring the rich worlds of books and video games, which constantly inspire my creative and technical projects.
