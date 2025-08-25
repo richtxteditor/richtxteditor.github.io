@@ -78,22 +78,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/house_of_leaves/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "projects-fusion-manaba-frontend",
-          title: 'fusion-manaba-frontend',
-          description: "The official frontend for Fusion Manaba, a modern e-commerce platform.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/10_project/";
             },},{
         id: 'social-email',
         title: 'email',
