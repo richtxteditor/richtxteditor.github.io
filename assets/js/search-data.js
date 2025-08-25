@@ -56,7 +56,10 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/house_of_leaves/";
-            },},{id: "projects-fusion-manaba-frontend",
+            },},{id: "news-welcome-to-my-new-website-please-feel-free-to-leave-a-comment-on-any-blog-post-or-project-you-see-just-make-sure-to-sign-in-via-github-first",
+          title: '🎍🎍🎍 Welcome to my new website! Please feel free to leave a comment...',
+          description: "",
+          section: "News",},{id: "projects-fusion-manaba-frontend",
           title: 'fusion-manaba-frontend',
           description: "The official frontend for Fusion Manaba, a modern e-commerce platform.",
           section: "Projects",handler: () => {
