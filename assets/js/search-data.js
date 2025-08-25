@@ -51,7 +51,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "books-house-of-leaves",
+            },{id: "post-from-broken-builds-to-live-portfolio-a-jekyll-amp-al-folio-journey",
+        
+          title: "From Broken Builds to Live Portfolio: A Jekyll &amp; al-folio Journey",
+        
+        description: "Documenting the final hurdles of deploying my portfolio, from cryptic errors and giscus configurations to fixing a CI/CD pipeline.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/first-post/";
+          
+        },
+      },{id: "books-house-of-leaves",
           title: 'House of Leaves',
           description: "",
           section: "Books",handler: () => {
