@@ -4,7 +4,7 @@ title: "From Broken Builds to Live Portfolio: A Jekyll & al-folio Journey"
 date: 2025-08-22 10:30:00
 description: Documenting the final hurdles of deploying my portfolio, from cryptic errors and giscus configurations to fixing a CI/CD pipeline.
 tags: Jekyll, GitHub Pages, al-folio, giscus, CI/CD, Portfolio
-categories: sample-posts
+categories: portfolio-posts
 featured: true
 ---
 
