@@ -3,7 +3,7 @@ layout: page
 title: fusion-manaba-frontend
 description: The official frontend for Fusion Manaba, a modern e-commerce platform.
 img: assets/img/fusion-manaba-frontend.png
-importance: 10
+importance: 0
 category: work
 giscus_comments: true
 ---
