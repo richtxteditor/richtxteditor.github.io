@@ -1,12 +1,12 @@
-# richtxteditor.github.io
+# freechie.github.io
 
 Personal portfolio site for John Molina — software engineer based in NJ.
 
-**Live:** [richtxteditor.github.io](https://richtxteditor.github.io)
+**Live:** [freechie.github.io](https://freechie.github.io)
 
-**DevTool Keybinds:** [richtxteditor.github.io/devtools](https://richtxteditor.github.io/devtools)
+**DevTool Keybinds:** [freechie.github.io/devtools](https://freechie.github.io/devtools)
 
-**DSA Topic Tracker:** [richtxteditor.github.io/dsa](https://richtxteditor.github.io/dsa)
+**DSA Topic Tracker:** [freechie.github.io/dsa](https://freechie.github.io/dsa)
 
 ## Stack
 
@@ -36,9 +36,9 @@ node scripts/validate-site.mjs
 
 After deploying metadata or content changes:
 
-1. Submit `https://richtxteditor.github.io/sitemap.xml` in
+1. Submit `https://freechie.github.io/sitemap.xml` in
    [Google Search Console](https://search.google.com/search-console).
-2. Inspect `https://richtxteditor.github.io/` and request indexing.
+2. Inspect `https://freechie.github.io/` and request indexing.
 3. Keep the name, role, location, and portfolio URL aligned across GitHub,
    LinkedIn, and X (`@freechiee`).
 4. Review Search Console impressions for branded queries each week.
