@@ -8,6 +8,7 @@ const repositoryRoot = path.resolve(
 );
 const siteRoot = path.join(repositoryRoot, "site");
 const indexPath = path.join(siteRoot, "index.html");
+const siteUrl = "https://freechie.github.io/";
 const errors = [];
 
 function assert(condition, message) {
@@ -77,9 +78,10 @@ const canonical = html.match(
 const sitemapLocation = sitemap.match(/<loc>([^<]+)<\/loc>/i)?.[1];
 assert(Boolean(canonical), "Missing canonical URL");
 assert(Boolean(sitemapLocation), "Missing sitemap URL");
+assert(canonical === siteUrl, `Canonical URL must be ${siteUrl}`);
 assert(canonical === sitemapLocation, "Canonical URL and sitemap URL differ");
 assert(
-  robots.includes("Sitemap: https://richtxteditor.github.io/sitemap.xml"),
+  robots.includes(`Sitemap: ${siteUrl}sitemap.xml`),
   "robots.txt does not advertise the sitemap",
 );
 
