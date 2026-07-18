@@ -6,7 +6,7 @@ Personal portfolio site for John Molina — software engineer based in NJ.
 
 **DevTool Keybinds:** [freechie.github.io/devtools](https://freechie.github.io/devtools)
 
-**DSA Topic Tracker:** [freechie.github.io/dsa](https://freechie.github.io/dsa)
+**DSA Topic Tracker:** [freechie.github.io/algorithms](https://freechie.github.io/algorithms)
 
 ## Stack
 
