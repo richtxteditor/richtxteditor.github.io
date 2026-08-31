@@ -1,6 +1,10 @@
+import { execFile } from "node:child_process";
 import { access, readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
+
+const execFileAsync = promisify(execFile);
 
 const repositoryRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -8,8 +12,10 @@ const repositoryRoot = path.resolve(
 );
 const siteRoot = path.join(repositoryRoot, "site");
 const indexPath = path.join(siteRoot, "index.html");
+const resumePath = path.join(siteRoot, "John Molina SWE resume.pdf");
 const siteUrl = "https://freechie.github.io/";
 const errors = [];
+const retiredProfilePattern = new RegExp(["richtxt", "editor"].join(""), "i");
 
 function assert(condition, message) {
   if (!condition) errors.push(message);
@@ -63,8 +69,30 @@ const appearanceJs = await readFile(
 const sitemap = await readFile(path.join(siteRoot, "sitemap.xml"), "utf8");
 const robots = await readFile(path.join(siteRoot, "robots.txt"), "utf8");
 
+try {
+  const [{ stdout: resumeText }, { stdout: resumeUrls }] = await Promise.all([
+    execFileAsync("pdftotext", ["-layout", resumePath, "-"]),
+    execFileAsync("pdfinfo", ["-url", resumePath]),
+  ]);
+  assert(
+    !retiredProfilePattern.test(`${resumeText}\n${resumeUrls}`),
+    "Resume still contains the retired profile",
+  );
+  for (const expectedProfile of [
+    "github.com/freechie",
+    "freechie.github.io",
+  ]) {
+    assert(
+      resumeText.includes(expectedProfile) && resumeUrls.includes(expectedProfile),
+      `Resume is missing updated text or link: ${expectedProfile}`,
+    );
+  }
+} catch (error) {
+  errors.push(`Could not inspect resume PDF: ${error.message}`);
+}
+
 assert(
-  html.includes("<title>John Molina | Software Engineer in New Jersey</title>"),
+  html.includes("<title>John R. Molina | Software Engineer in New Jersey</title>"),
   "Missing SEO title",
 );
 assert(
@@ -75,6 +103,10 @@ assert(/<h1\b[^>]*>John R\. Molina<\/h1>/i.test(html), "Missing primary H1");
 assert(collect(/<h1\b/gi, html).length === 1, "Expected exactly one H1");
 assert(collect(/<main\b/gi, html).length === 1, "Expected exactly one main landmark");
 assert(collect(/<nav\b/gi, html).length === 1, "Expected exactly one navigation landmark");
+assert(
+  html.includes('<header class="profile-header">'),
+  "Missing persistent profile header",
+);
 assert(
   html.includes('<a href="#main" class="skip-link">'),
   "Missing skip link to main content",
@@ -87,21 +119,29 @@ assert(
   collect(/data-view-panel="[^"]+"/gi, html).length === 4,
   "Expected exactly four single-page views",
 );
-assert(
-  collect(/data-project-visual="[^"]+"/gi, html).length === 3,
-  "Expected exactly three project architecture visuals",
-);
 assert(html.includes('id="theme-toggle"'), "Missing theme control");
 assert(
   foundationCss.includes(':root[data-theme="light"]'),
   "Missing light theme",
 );
 assert(
-  foundationCss.includes("--background: #000000") &&
-    foundationCss.includes("--background: #ffffff"),
-  "Theme backgrounds must remain black and white",
+  foundationCss.includes("--background: #171717") &&
+    foundationCss.includes("--background: #f6f6f3"),
+  "Theme backgrounds must use the approved soft dark and light values",
 );
 assert(!componentsCss.includes("grayscale("), "Portrait must remain full color");
+for (const discardedPattern of [
+  'data-project-preview=',
+  'data-project-visual=',
+  'class="architecture-flow"',
+  'class="project-number"',
+  'class="eyebrow"',
+]) {
+  assert(
+    !html.includes(discardedPattern),
+    `Discarded portfolio pattern found: ${discardedPattern}`,
+  );
+}
 assert(foundationCss.includes(":focus-visible"), "Missing keyboard focus styles");
 assert(
   foundationCss.includes("@media (prefers-reduced-motion: reduce)"),
@@ -126,6 +166,7 @@ for (const unsupportedClaim of ["Bloomberg", "SIPRI", "JUnit", "MySQL"]) {
   );
 }
 assert(!html.includes("skill-tag"), "Legacy skill pills are still present");
+assert(!retiredProfilePattern.test(html), "Retired profile found in HTML");
 assert(!readme.includes("/dsa"), "README still links to the missing DSA page");
 for (const name of [
   "John R. Molina",
@@ -170,9 +211,9 @@ for (const block of jsonLdBlocks) {
     const person = structuredData["@graph"]?.find(
       (entry) => entry["@type"] === "Person",
     );
-    assert(person?.name === "John Molina", "JSON-LD has the wrong primary name");
+    assert(person?.name === "John R. Molina", "JSON-LD has the wrong primary name");
     for (const alternateName of [
-      "John R. Molina",
+      "John Molina",
       "Richie Molina",
       "Richard Molina",
     ]) {
