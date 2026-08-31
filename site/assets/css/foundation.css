@@ -8,226 +8,79 @@
 
 :root {
   color-scheme: dark;
-  --bg:
-    radial-gradient(ellipse at 75% 85%, #18103a 0%, transparent 45%),
-    radial-gradient(ellipse at 25% 40%, #0c1830 0%, transparent 40%),
-    linear-gradient(
-      160deg,
-      #050507 0%,
-      #0a0e1a 25%,
-      #0e1028 50%,
-      #100c20 75%,
-      #060608 100%
-    );
-  --nav-bg: #0f172a;
-  --nav-glass: rgba(15, 23, 42, 0.8);
-  --nav-border: rgba(255, 255, 255, 0.08);
-  --surface: #161616;
-  --border: #222222;
-  --muted: #9a9a9a;
-  --text: #e8e8e8;
-  --dim: #a0a0a0;
-  --logo: #b07ee8;
-  --section-accent: #d4a830;
-  --card-bg: rgba(255, 255, 255, 0.04);
-  --card-hover: rgba(255, 255, 255, 0.08);
-  --contact-bg: rgba(255, 255, 255, 0.04);
-  --contact-hover: rgba(255, 255, 255, 0.08);
-  --tag-border-strength: 50%;
-  --tag-bg-strength: 14%;
-
-  --primary-fg: #f0cc60;
-  --primary-border: #a08030;
-  --primary-bg: rgba(240, 204, 96, 0.2);
-  --primary-hover-fg: #ffe080;
-  --primary-hover-border: #f0cc60;
-  --primary-hover-bg: rgba(240, 204, 96, 0.3);
-  --github-fg: #b8a8f0;
-  --github-border: #6050bb;
-  --github-bg: rgba(160, 144, 224, 0.22);
-  --github-hover-fg: #d0c0ff;
-  --github-hover-border: #b8a8f0;
-  --github-hover-bg: rgba(160, 144, 224, 0.35);
-  --resume-fg: #90d8ff;
-  --resume-border: #3580cc;
-  --resume-bg: rgba(128, 204, 255, 0.22);
-  --resume-hover-fg: #b0e8ff;
-  --resume-hover-border: #90d8ff;
-  --resume-hover-bg: rgba(128, 204, 255, 0.35);
-  --contact-fg: #80f0b0;
-  --contact-border: #309960;
-  --contact-button-bg: rgba(112, 240, 168, 0.22);
-  --contact-hover-fg: #a8ffd0;
-  --contact-hover-border: #80f0b0;
-  --contact-button-hover-bg: rgba(112, 240, 168, 0.35);
-
-  --tag-python: #4ec9b0;
-  --tag-typescript: #569cd6;
-  --tag-javascript: #e8d44d;
-  --tag-java: #ff6b6b;
-  --tag-php: #b48ead;
-  --tag-sql: #ff9ec6;
-  --tag-cpp: #c586c0;
-  --tag-django: #73d677;
-  --tag-react: #61dafb;
-  --tag-node: #a3e635;
-  --tag-postgres: #7cacf8;
-  --tag-docker: #38bdf8;
-  --tag-aws: #f9a825;
-  --tag-ghactions: #3b82f6;
-  --tag-linux: #fbbf24;
-  --tag-jupyter: #fb923c;
-  --tag-html: #f97316;
-  --tag-css: #a78bfa;
-  --tag-datamgmt: #f5a623;
-  --tag-bi: #818cf8;
-  --tag-excel: #4ade80;
-  --label-email: #ff6b6b;
-  --label-github: #c586c0;
-  --label-linkedin: #61dafb;
-  --label-twitter: #1d9bf0;
-
-  --font: "SF Mono", "Fira Code", "Cascadia Code", monospace;
-  --sans: system-ui, -apple-system, sans-serif;
+  --background: #000000;
+  --text: #ffffff;
+  --muted: #aaa9a4;
+  --faint: #6f6e6a;
+  --line: #292927;
+  --line-strong: #4a4945;
+  --nav-height: 72px;
+  --sans:
+    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --mono:
+    "SFMono-Regular", Consolas, "Liberation Mono", "Fira Code", monospace;
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg:
-    radial-gradient(
-      ellipse at 20% 20%,
-      rgba(210, 220, 235, 0.5) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 80% 80%,
-      rgba(200, 215, 230, 0.4) 0%,
-      transparent 45%
-    ),
-    linear-gradient(
-      160deg,
-      #f8f9fb 0%,
-      #f2f4f8 25%,
-      #eef1f5 50%,
-      #f0f2f6 75%,
-      #f5f6f9 100%
-    );
-  --nav-bg: #ffffff;
-  --nav-glass: rgba(255, 255, 255, 0.7);
-  --nav-border: rgba(0, 0, 0, 0.06);
-  --surface: #f0f0f0;
-  --border: #e0e0e0;
-  --muted: #737373;
+  --background: #ffffff;
   --text: #111111;
-  --dim: #555555;
-  --logo: #8040e0;
-  --section-accent: #c88b00;
-  --card-bg: rgba(255, 255, 255, 0.15);
-  --card-hover: rgba(255, 255, 255, 0.25);
-  --contact-bg: rgba(255, 255, 255, 0.25);
-  --contact-hover: rgba(255, 255, 255, 0.4);
-  --tag-border-strength: 35%;
-  --tag-bg-strength: 8%;
-
-  --primary-fg: #c88b00;
-  --primary-border: #f0c850;
-  --primary-bg: rgba(200, 139, 0, 0.1);
-  --primary-hover-fg: #a06e00;
-  --primary-hover-border: #c88b00;
-  --primary-hover-bg: rgba(200, 139, 0, 0.18);
-  --github-fg: #6060cc;
-  --github-border: #b0b0f0;
-  --github-bg: rgba(96, 96, 204, 0.1);
-  --github-hover-fg: #4040aa;
-  --github-hover-border: #6060cc;
-  --github-hover-bg: rgba(96, 96, 204, 0.18);
-  --resume-fg: #2090e0;
-  --resume-border: #80ccff;
-  --resume-bg: rgba(32, 144, 224, 0.1);
-  --resume-hover-fg: #0070c0;
-  --resume-hover-border: #2090e0;
-  --resume-hover-bg: rgba(32, 144, 224, 0.18);
-  --contact-fg: #10a060;
-  --contact-border: #70e8a8;
-  --contact-button-bg: rgba(16, 160, 96, 0.1);
-  --contact-hover-fg: #088048;
-  --contact-hover-border: #10a060;
-  --contact-button-hover-bg: rgba(16, 160, 96, 0.18);
-
-  --tag-python: #0e8a72;
-  --tag-typescript: #2b6cb0;
-  --tag-javascript: #a89000;
-  --tag-java: #dc2626;
-  --tag-php: #8b5a8b;
-  --tag-sql: #d6336c;
-  --tag-cpp: #9333ea;
-  --tag-django: #16a34a;
-  --tag-react: #0891b2;
-  --tag-node: #4d7c0f;
-  --tag-postgres: #4f46e5;
-  --tag-docker: #0284c7;
-  --tag-aws: #d97706;
-  --tag-ghactions: #2563eb;
-  --tag-linux: #b45309;
-  --tag-jupyter: #ea580c;
-  --tag-html: #e04e18;
-  --tag-css: #7c3aed;
-  --tag-datamgmt: #b45309;
-  --tag-bi: #4f46e5;
-  --tag-excel: #16a34a;
-  --label-email: #dc2626;
-  --label-github: #9333ea;
-  --label-linkedin: #0891b2;
-  --label-twitter: #0c7abf;
+  --muted: #5f5f5b;
+  --faint: #7c7b76;
+  --line: #e5e5e2;
+  --line-strong: #c7c7c2;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--background);
 }
 
 body {
   min-width: 320px;
-  background: var(--bg);
-  background-attachment: fixed;
   color: var(--text);
   font-family: var(--sans);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--text);
+  color: var(--background);
 }
 
 .container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: min(100% - 4rem, 1160px);
+  margin-inline: auto;
 }
 
-section {
-  padding: 6rem 0;
-  border-bottom: 1px solid var(--border);
-  scroll-margin-top: 72px;
-}
-
-section:last-of-type {
-  border-bottom: none;
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
 .skip-link {
-  position: absolute;
-  top: -100%;
-  left: 1rem;
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
   z-index: 999;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.65rem 0.9rem;
   background: var(--text);
-  color: var(--nav-bg);
-  font-size: 0.875rem;
-  font-weight: 600;
+  color: var(--background);
+  font-weight: 700;
   text-decoration: none;
+  transform: translateY(-160%);
 }
 
 .skip-link:focus {
-  top: 1rem;
+  transform: translateY(0);
 }
 
 .sr-only {
@@ -244,47 +97,49 @@ section:last-of-type {
 
 :focus-visible {
   outline: 2px solid var(--text);
-  outline-offset: 3px;
-  border-radius: 2px;
+  outline-offset: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .container {
+    width: min(100% - 2rem, 1160px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 
 @media (prefers-contrast: more) {
-  :root[data-theme="dark"] {
-    --muted: #999999;
-    --dim: #cccccc;
-    --border: #444444;
-  }
-
-  :root[data-theme="light"] {
-    --muted: #555555;
-    --dim: #222222;
-    --border: #999999;
+  :root {
+    --muted: #d7d7d2;
+    --faint: #b8b7b2;
+    --line: #66645f;
+    --line-strong: #aaa8a1;
   }
 
   :focus-visible {
     outline-width: 3px;
   }
-}
 
-@media (max-width: 600px) {
-  .container {
-    padding: 0 1.25rem;
-  }
-
-  section {
-    padding: 4rem 0;
+  :root[data-theme="light"] {
+    --muted: #3f3f3c;
+    --faint: #52524e;
+    --line: #999994;
+    --line-strong: #555551;
   }
 }
