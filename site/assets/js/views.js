@@ -29,7 +29,6 @@ export function initViewNavigation() {
     panels.forEach((panel) => {
       const isActive = panel.dataset.viewPanel === selectedView;
       panel.hidden = !isActive;
-      panel.classList.toggle("is-active", isActive);
 
       if (isActive && moveFocus) {
         panel.querySelector("h1, h2")?.focus({ preventScroll: true });
@@ -46,8 +45,8 @@ export function initViewNavigation() {
 
     document.title =
       selectedView === "home"
-        ? "John Molina | Software Engineer in New Jersey"
-        : `${selectedView[0].toUpperCase()}${selectedView.slice(1)} | John Molina`;
+        ? "John R. Molina | Software Engineer in New Jersey"
+        : `${selectedView[0].toUpperCase()}${selectedView.slice(1)} | John R. Molina`;
   }
 
   links.forEach((link) => {
@@ -57,7 +56,7 @@ export function initViewNavigation() {
 
       event.preventDefault();
       window.history.pushState(null, "", `#${view}`);
-      activate(view, true);
+      activate(view, event.detail === 0);
     });
   });
 

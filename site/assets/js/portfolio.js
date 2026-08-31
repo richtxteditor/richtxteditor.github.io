@@ -1,8 +1,6 @@
 import { initAppearance } from "./appearance.js";
-import { initProjectPreviews } from "./projects.js";
-import { initCurrentYear, initViewNavigation } from "./views.js";
+import { initCurrentYear, initViewNavigation } from "./views.js?v=4";
 
 initCurrentYear();
 initAppearance();
-initProjectPreviews();
 initViewNavigation();

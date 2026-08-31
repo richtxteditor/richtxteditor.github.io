@@ -8,28 +8,25 @@
 
 :root {
   color-scheme: dark;
-  --background: #000000;
-  --text: #ffffff;
-  --muted: #aaa9a4;
-  --faint: #6f6e6a;
-  --line: #292927;
-  --line-strong: #4a4945;
-  --nav-height: 72px;
+  --background: #171717;
+  --text: #f4f4f1;
+  --muted: #b4b4ae;
+  --faint: #8b8b85;
+  --line: #373735;
+  --line-strong: #565652;
+  --nav-height: 66px;
   --sans:
-    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  --mono:
-    "SFMono-Regular", Consolas, "Liberation Mono", "Fira Code", monospace;
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --background: #ffffff;
-  --text: #111111;
-  --muted: #5f5f5b;
-  --faint: #7c7b76;
-  --line: #e5e5e2;
-  --line-strong: #c7c7c2;
+  --background: #f6f6f3;
+  --text: #181818;
+  --muted: #5f5f5a;
+  --faint: #70706b;
+  --line: #deded8;
+  --line-strong: #c3c3bc;
 }
 
 html,
@@ -53,11 +50,6 @@ body {
 ::selection {
   background: var(--text);
   color: var(--background);
-}
-
-.container {
-  width: min(100% - 4rem, 1160px);
-  margin-inline: auto;
 }
 
 a {
@@ -102,16 +94,6 @@ a {
 
 [hidden] {
   display: none !important;
-}
-
-@media (max-width: 700px) {
-  :root {
-    --nav-height: 64px;
-  }
-
-  .container {
-    width: min(100% - 2rem, 1160px);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

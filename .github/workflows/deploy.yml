@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 22
       - name: Install validation tools
-        run: sudo apt-get update && sudo apt-get install --yes tidy libxml2-utils
+        run: sudo apt-get update && sudo apt-get install --yes tidy libxml2-utils poppler-utils
       - name: Validate site
         run: |
           node scripts/validate-site.mjs

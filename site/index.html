@@ -6,24 +6,24 @@
     <meta name="color-scheme" content="dark light" />
     <meta
       name="description"
-      content="John Molina is a software engineer in Northern New Jersey building reliable web products, data systems, and developer tools."
+      content="John R. Molina is a software engineer in Northern New Jersey building web applications and tools for people who work with complex data."
     />
-    <meta name="author" content="John Molina" />
+    <meta name="author" content="John R. Molina" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta
       name="google-site-verification"
       content="mkjCRv_9bRxcoxDJzjPLetr5b4XBEuCTNZQzFPJyCCo"
     />
-    <title>John Molina | Software Engineer in New Jersey</title>
+    <title>John R. Molina | Software Engineer in New Jersey</title>
     <link rel="canonical" href="https://freechie.github.io/" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="John Molina" />
-    <meta property="og:title" content="John Molina | Software Engineer" />
+    <meta property="og:site_name" content="John R. Molina" />
+    <meta property="og:title" content="John R. Molina | Software Engineer" />
     <meta
       property="og:description"
-      content="Reliable web products, data systems, and developer tools built in Northern New Jersey."
+      content="Web applications and tools for people who work with complex data."
     />
     <meta
       property="og:image"
@@ -39,10 +39,10 @@
     <meta property="og:url" content="https://freechie.github.io/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@freechiee" />
-    <meta name="twitter:title" content="John Molina | Software Engineer" />
+    <meta name="twitter:title" content="John R. Molina | Software Engineer" />
     <meta
       name="twitter:description"
-      content="Reliable web products, data systems, and developer tools built in Northern New Jersey."
+      content="Web applications and tools for people who work with complex data."
     />
     <meta
       name="twitter:image"
@@ -56,12 +56,8 @@
             "@type": "WebSite",
             "@id": "https://freechie.github.io/#website",
             "url": "https://freechie.github.io/",
-            "name": "John Molina",
-            "alternateName": [
-              "John R. Molina",
-              "Richie Molina",
-              "Richard Molina"
-            ]
+            "name": "John R. Molina",
+            "alternateName": ["John Molina", "Richie Molina", "Richard Molina"]
           },
           {
             "@type": "ProfilePage",
@@ -77,9 +73,9 @@
           {
             "@type": "Person",
             "@id": "https://freechie.github.io/#john-molina",
-            "name": "John Molina",
+            "name": "John R. Molina",
             "alternateName": [
-              "John R. Molina",
+              "John Molina",
               "Richie Molina",
               "Richard Molina",
               "freechie"
@@ -87,7 +83,7 @@
             "url": "https://freechie.github.io/",
             "image": "https://freechie.github.io/prof_pic.png",
             "jobTitle": "Software Engineer",
-            "description": "Software engineer in Northern New Jersey building reliable web products, data systems, and developer tools.",
+            "description": "Software engineer in Northern New Jersey building web applications and tools for people who work with complex data.",
             "address": {
               "@type": "PostalAddress",
               "addressRegion": "New Jersey",
@@ -100,11 +96,11 @@
             ],
             "knowsAbout": [
               "Software engineering",
-              "Python",
-              "Django",
-              "TypeScript",
-              "SQL",
-              "Data systems"
+              "Web application development",
+              "Data systems",
+              "Data quality",
+              "Technical reporting",
+              "Content management systems"
             ]
           }
         ]
@@ -129,24 +125,58 @@
         root.dataset.theme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="assets/css/foundation.css?v=5" />
-    <link rel="stylesheet" href="assets/css/components.css?v=5" />
-    <script type="module" src="assets/js/portfolio.js"></script>
+    <link rel="stylesheet" href="assets/css/foundation.css?v=8" />
+    <link rel="stylesheet" href="assets/css/components.css?v=8" />
+    <script type="module" src="assets/js/portfolio.js?v=6"></script>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to current content</a>
 
-    <header>
-      <nav aria-label="Portfolio navigation">
-        <div class="container nav-container">
+    <div class="site-shell">
+      <header class="profile-header">
+        <picture class="profile-portrait">
+          <source
+            type="image/webp"
+            srcset="
+              assets/images/john-molina-192.webp 192w,
+              assets/images/john-molina-560.webp 560w
+            "
+            sizes="(max-width: 760px) 84px, 230px"
+          />
+          <img
+            src="prof_pic.png"
+            alt="John R. Molina smiling in a sunlit room"
+            width="560"
+            height="560"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
+
+        <div class="profile-copy">
+          <h1>John R. Molina</h1>
+          <p>Software engineer</p>
+          <p>Northern New Jersey</p>
+        </div>
+
+        <div class="profile-links">
+          <a href="mailto:jrm90@me.com">jrm90@me.com</a>
           <a
-            href="#home"
-            class="nav-logo"
-            data-view-link="home"
-            aria-label="John R. Molina, home"
+            href="John%20Molina%20SWE%20resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-describedby="pdf-note new-tab-note"
+            >Résumé</a
           >
-            JRM
-          </a>
+        </div>
+
+        <p class="site-credit">
+          © <time id="year" datetime="2026">2026</time> John R. Molina
+        </p>
+      </header>
+
+      <div class="content-column">
+        <nav aria-label="Portfolio navigation">
           <ul class="nav-links">
             <li>
               <a href="#home" data-view-link="home" aria-current="page">Home</a>
@@ -154,7 +184,7 @@
             <li><a href="#work" data-view-link="work">Work</a></li>
             <li><a href="#about" data-view-link="about">About</a></li>
             <li><a href="#contact" data-view-link="contact">Contact</a></li>
-            <li class="theme-item">
+            <li>
               <button
                 id="theme-toggle"
                 type="button"
@@ -164,324 +194,178 @@
               </button>
             </li>
           </ul>
-        </div>
-      </nav>
-    </header>
+        </nav>
 
-    <main id="main" tabindex="-1" aria-live="polite">
-      <span class="sr-only" id="new-tab-note">Opens in a new tab.</span>
-      <span class="sr-only" id="pdf-note">PDF document.</span>
+        <main id="main" tabindex="-1" aria-live="polite">
+          <span class="sr-only" id="new-tab-note">Opens in a new tab.</span>
+          <span class="sr-only" id="pdf-note">PDF document.</span>
 
-      <section
-        id="home"
-        class="view-panel is-active"
-        data-view-panel="home"
-        aria-labelledby="home-heading"
-      >
-        <div class="container panel-shell home-layout">
-          <figure class="home-portrait">
-            <picture>
-              <source
-                type="image/webp"
-                srcset="
-                  assets/images/john-molina-192.webp 192w,
-                  assets/images/john-molina-560.webp 560w
-                "
-                sizes="(max-width: 700px) 132px, 360px"
-              />
-              <img
-                src="prof_pic.png"
-                alt="John R. Molina smiling in a sunlit room"
-                width="560"
-                height="560"
-                decoding="async"
-                fetchpriority="high"
-              />
-            </picture>
-            <figcaption>Available for full-time software engineering roles.</figcaption>
-          </figure>
-
-          <div class="home-copy">
-            <p class="eyebrow">Software engineer · Northern New Jersey</p>
-            <h1 id="home-heading" tabindex="-1">John R. Molina</h1>
-            <p class="home-statement">
-              I build reliable web products, data systems, and developer tools.
-            </p>
-            <p class="home-proof">
-              Python, Django, TypeScript, and SQL. Enterprise reporting
-              experience across more than 5 million records.
-            </p>
-            <div class="home-actions">
-              <a href="#work" data-view-link="work" class="text-link">
-                Selected work <span aria-hidden="true">→</span>
-              </a>
-              <a
-                href="John%20Molina%20SWE%20resume.pdf"
-                class="text-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-describedby="pdf-note new-tab-note"
-              >
-                Résumé <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="work"
-        class="view-panel"
-        data-view-panel="work"
-        aria-labelledby="work-heading"
-        hidden
-      >
-        <div class="container panel-shell work-layout">
-          <div class="panel-heading">
-            <p class="eyebrow">Selected work · 03</p>
-            <h2 id="work-heading" tabindex="-1">Work</h2>
-          </div>
-
-          <div class="work-content">
-            <ol class="project-list">
-            <li class="project">
-              <a
-                href="https://github.com/freechie/portfolio-django"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-describedby="new-tab-note"
-                data-project-preview="portfolio-django"
-              >
-                <span class="project-number" aria-hidden="true">01</span>
-                <span class="project-content">
-                  <span class="project-title">Portfolio Django</span>
-                  <span class="project-description">
-                    Publishing platform restored on Django 6.0, Wagtail 8.0,
-                    and React.
-                  </span>
-                  <span class="project-proof">29 tests · Docker verified</span>
-                </span>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li class="project">
-              <a
-                href="https://github.com/freechie/global-economic-impact-analysis"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-describedby="new-tab-note"
-                data-project-preview="economic-impact"
-              >
-                <span class="project-number" aria-hidden="true">02</span>
-                <span class="project-content">
-                  <span class="project-title">Global Economic Impact</span>
-                  <span class="project-description">
-                    Reproducible Plotly analysis with 14 interactive figures
-                    and explicit data provenance.
-                  </span>
-                  <span class="project-proof">14 figures · 20 tests</span>
-                </span>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li class="project">
-              <a
-                href="https://github.com/freechie/fusion-manaba"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-describedby="new-tab-note"
-                data-project-preview="fusion-manaba"
-              >
-                <span class="project-number" aria-hidden="true">03</span>
-                <span class="project-content">
-                  <span class="project-title">Fusion Manaba</span>
-                  <span class="project-description">
-                    Server-rendered catalog and persistent cart application.
-                  </span>
-                  <span class="project-proof">
-                    Next.js · TypeScript · PostgreSQL
-                  </span>
-                </span>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            </ol>
-
-            <aside class="project-preview" aria-label="Project architecture">
-              <figure data-project-visual="portfolio-django">
-                <figcaption>
-                  <span>Architecture</span>
-                  <strong>Content publishing</strong>
-                </figcaption>
-                <div class="architecture-flow" aria-hidden="true">
-                  <span>Editor</span>
-                  <i>→</i>
-                  <span>Django + Wagtail</span>
-                  <i>→</i>
-                  <span>Published site</span>
-                </div>
-                <p>
-                  Wagtail manages content while Django serves the site and API;
-                  React powers the project interface.
-                </p>
-              </figure>
-
-              <figure data-project-visual="economic-impact" hidden>
-                <figcaption>
-                  <span>Data flow</span>
-                  <strong>Validated analysis</strong>
-                </figcaption>
-                <div class="architecture-flow" aria-hidden="true">
-                  <span>Open + demo data</span>
-                  <i>→</i>
-                  <span>Schema validation</span>
-                  <i>→</i>
-                  <span>Notebook + Plotly</span>
-                </div>
-                <p>
-                  A manifest and canonical schemas keep the public analysis
-                  reproducible without distributing licensed source data.
-                </p>
-              </figure>
-
-              <figure data-project-visual="fusion-manaba" hidden>
-                <figcaption>
-                  <span>Request flow</span>
-                  <strong>Catalog and cart</strong>
-                </figcaption>
-                <div class="architecture-flow" aria-hidden="true">
-                  <span>Browser</span>
-                  <i>→</i>
-                  <span>Next.js</span>
-                  <i>→</i>
-                  <span>PostgreSQL</span>
-                </div>
-                <p>
-                  Server-rendered catalog routes and database-backed cart state
-                  keep the shopping flow durable across requests.
-                </p>
-              </figure>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="about"
-        class="view-panel"
-        data-view-panel="about"
-        aria-labelledby="about-heading"
-        hidden
-      >
-        <div class="container panel-shell about-layout">
-          <div class="panel-heading">
-            <p class="eyebrow">About</p>
-            <h2 id="about-heading" tabindex="-1">
-              Curiosity became a practice.
-            </h2>
-          </div>
-
-          <div class="about-content">
-            <div class="about-copy">
+          <section
+            id="home"
+            class="view-panel"
+            data-view-panel="home"
+            aria-labelledby="home-heading"
+          >
+            <div class="panel-content prose">
+              <h2 id="home-heading" tabindex="-1">What I do</h2>
               <p>
-                I came to software through music and interactive art. That
-                curiosity led me from a Media Arts and Film program to a
-                computer science degree at Montclair State University, then to
-                the systems behind reliable web products.
+                I build web applications and tools for people who work with
+                complex data.
               </p>
               <p>
-                Today I work with Python, Django, TypeScript, SQL, and data
-                tooling. I continue strengthening my fundamentals through
-                <a
-                  href="https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-describedby="new-tab-note"
-                  >algorithm study</a
-                >, while maintaining the website and coordinating events for a
-                <a
-                  href="https://www.dudjomtersar.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-describedby="new-tab-note"
-                  >Tibetan Buddhist organization in New York City</a
-                >.
+                My professional background is in university advancement and
+                nonprofit fundraising. At Columbia, I worked on reporting, data
+                quality, governance, and user support for a system containing
+                more than five million records. Before that, I managed donor
+                records and processed more than 300 gifts a day at the
+                Parkinson's Foundation.
               </p>
-            </div>
-
-            <ul class="capability-list" aria-label="Technical capabilities">
-              <li>
-                <span>Application engineering</span>
-                <span>Python · Django · React · TypeScript</span>
-              </li>
-              <li>
-                <span>Data systems</span>
-                <span>SQL · PostgreSQL · analytics · reporting</span>
-              </li>
-              <li>
-                <span>Delivery</span>
-                <span>Docker · GitHub Actions · automated testing</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="contact"
-        class="view-panel"
-        data-view-panel="contact"
-        aria-labelledby="contact-heading"
-        hidden
-      >
-        <div class="container panel-shell contact-layout">
-          <div>
-            <p class="eyebrow">Contact · New York and New Jersey</p>
-            <h2 id="contact-heading" tabindex="-1">
-              Open to full-time software engineering roles.
-            </h2>
-          </div>
-
-          <div class="contact-actions">
-            <a class="contact-email" href="mailto:jrm90@me.com">
-              jrm90@me.com
-            </a>
-            <ul>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/johnrmolina/"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  aria-describedby="new-tab-note"
-                  >LinkedIn ↗</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/freechie"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  aria-describedby="new-tab-note"
-                  >GitHub ↗</a
-                >
-              </li>
-              <li>
+              <div class="home-links">
+                <a href="#work" data-view-link="work">Selected work</a>
                 <a
                   href="John%20Molina%20SWE%20resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-describedby="pdf-note new-tab-note"
-                  >Résumé ↗</a
+                  >Résumé</a
                 >
-              </li>
-            </ul>
-          </div>
+              </div>
+            </div>
+          </section>
 
-          <p class="site-credit">
-            © <time id="year" datetime="2026">2026</time> John R. Molina
-          </p>
-        </div>
-      </section>
-    </main>
+          <section
+            id="work"
+            class="view-panel"
+            data-view-panel="work"
+            aria-labelledby="work-heading"
+            hidden
+          >
+            <div class="panel-content work-content">
+              <h2 id="work-heading" tabindex="-1">Selected work</h2>
+              <ul class="project-list">
+                <li class="project">
+                  <a
+                    href="https://github.com/freechie/portfolio-django"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-describedby="new-tab-note"
+                    ><strong>Portfolio Django</strong></a
+                  >
+                  <p>
+                    Publishing platform restored on Django 6.0, Wagtail 8.0, and
+                    React. 29 tests; local and Docker workflows verified.
+                  </p>
+                </li>
+                <li class="project">
+                  <a
+                    href="https://github.com/freechie/global-economic-impact-analysis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-describedby="new-tab-note"
+                    ><strong>Global Economic Impact</strong></a
+                  >
+                  <p>
+                    Reproducible Plotly analysis with explicit data provenance.
+                    14 interactive figures; 20 tests.
+                  </p>
+                </li>
+                <li class="project">
+                  <a
+                    href="https://github.com/freechie/fusion-manaba"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-describedby="new-tab-note"
+                    ><strong>Fusion Manaba</strong></a
+                  >
+                  <p>
+                    Server-rendered catalog and persistent cart built with
+                    Next.js, TypeScript, and PostgreSQL.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section
+            id="about"
+            class="view-panel"
+            data-view-panel="about"
+            aria-labelledby="about-heading"
+            hidden
+          >
+            <div class="panel-content prose about-content">
+              <h2 id="about-heading" tabindex="-1">About</h2>
+              <p>
+                I am drawn to things that invite experimentation. Video games,
+                music software, guitar pedals, and interactive art have all
+                shaped the way I think about technology. I enjoy using these
+                tools, but I am equally interested in how they are designed and
+                built.
+              </p>
+              <p>
+                I studied Media Arts and Film before earning a Computer Science
+                degree at Montclair State University. That background taught me
+                to consider both how software works and how people experience
+                it.
+              </p>
+              <p>
+                I also work as a freelance developer, building and maintaining
+                websites for nonprofit clients.
+              </p>
+            </div>
+          </section>
+
+          <section
+            id="contact"
+            class="view-panel"
+            data-view-panel="contact"
+            aria-labelledby="contact-heading"
+            hidden
+          >
+            <div class="panel-content prose">
+              <h2 id="contact-heading" tabindex="-1">Contact</h2>
+              <p>
+                I'm looking for a full-time software engineering role in the New
+                York and New Jersey area.
+              </p>
+              <p>
+                <a class="contact-email" href="mailto:jrm90@me.com"
+                  >jrm90@me.com</a
+                >
+              </p>
+              <ul class="contact-links">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/johnrmolina/"
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                    aria-describedby="new-tab-note"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/freechie"
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                    aria-describedby="new-tab-note"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="John%20Molina%20SWE%20resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-describedby="pdf-note new-tab-note"
+                    >Résumé</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
