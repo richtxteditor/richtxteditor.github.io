@@ -49,62 +49,83 @@
       content="https://freechie.github.io/og-image.png"
     />
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://freechie.github.io/#website",
-            "url": "https://freechie.github.io/",
-            "name": "John R. Molina",
-            "alternateName": ["John Molina", "Richie Molina", "Richard Molina"]
-          },
-          {
-            "@type": "ProfilePage",
-            "@id": "https://freechie.github.io/#profile-page",
-            "url": "https://freechie.github.io/",
-            "isPartOf": {
-              "@id": "https://freechie.github.io/#website"
-            },
-            "mainEntity": {
-              "@id": "https://freechie.github.io/#john-molina"
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://freechie.github.io/#website",
+                  "url": "https://freechie.github.io/",
+                  "name": "John R. Molina",
+                  "alternateName": ["John Molina", "Richie Molina", "Richard Molina"]
+                },
+                {
+                  "@type": "ProfilePage",
+                  "@id": "https://freechie.github.io/#profile-page",
+                  "url": "https://freechie.github.io/",
+                  "isPartOf": {
+                    "@id": "https://freechie.github.io/#website"
+                  },
+                  "mainEntity": {
+                    "@id": "https://freechie.github.io/#john-molina"
+                  }
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://freechie.github.io/#john-molina",
+                  "name": "John R. Molina",
+                  "alternateName": [
+                    "John Molina",
+                    "Richie Molina",
+                    "Richard Molina",
+                    "freechie"
+                  ],
+                  "url": "https://freechie.github.io/",
+                  "image": "https://freechie.github.io/prof_pic.png",
+                  "jobTitle": "Software Engineer",
+                  "description": "Software engineer in Northern New Jersey building web applications and tools for people who work with complex data.",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressRegion": "New Jersey",
+                    "addressCountry": "US"what@macintosh:…/Sites/freechie.github.io main⇡ exit:1 655ms » git pull
+      remote: Enumerating objects: 11, done.
+      remote: Counting objects: 100% (11/11), done.
+      remote: Compressing objects: 100% (4/4), done.
+      remote: Total 7 (delta 5), reused 4 (delta 3), pack-reused 0 (from 0)
+      Unpacking objects: 100% (7/7), 1.64 KiB | 210.00 KiB/s, done.
+      From github.com:freechie/freechie.github.io
+         4c8ff51..37cd3d6  main       -> origin/main
+      Auto-merging README.md
+      CONFLICT (content): Merge conflict in README.md
+      Auto-merging site/index.html
+      CONFLICT (content): Merge conflict in site/index.html
+      error: could not apply ee9cbd8... redesign portfolio experience. WIP
+      hint: Resolve all conflicts manually, mark them as resolved with
+      hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+      hint: You can instead skip this commit: run "git rebase --skip".
+      hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+      hint: Disable this message with "git config set advice.mergeConflict false"
+      Recorded preimage for 'README.md'
+      Recorded preimage for 'site/index.html'
+      Could not apply ee9cbd8... # redesign portfolio experience. WIP
+      what@macintosh:…/Sites/freechie.github.io HEAD=x+ exit:1 679ms »
+                  },
+                  "sameAs": [
+                    "https://github.com/freechie",
+                    "https://www.linkedin.com/in/johnrmolina/",
+                    "https://x.com/freechiee"
+                  ],
+                  "knowsAbout": [
+                    "Software engineering",
+                    "Web application development",
+                    "Data systems",
+                    "Data quality",
+                    "Technical reporting",
+                    "Content management systems"
+                  ]
+                }
+              ]
             }
-          },
-          {
-            "@type": "Person",
-            "@id": "https://freechie.github.io/#john-molina",
-            "name": "John R. Molina",
-            "alternateName": [
-              "John Molina",
-              "Richie Molina",
-              "Richard Molina",
-              "freechie"
-            ],
-            "url": "https://freechie.github.io/",
-            "image": "https://freechie.github.io/prof_pic.png",
-            "jobTitle": "Software Engineer",
-            "description": "Software engineer in Northern New Jersey building web applications and tools for people who work with complex data.",
-            "address": {
-              "@type": "PostalAddress",
-              "addressRegion": "New Jersey",
-              "addressCountry": "US"
-            },
-            "sameAs": [
-              "https://github.com/freechie",
-              "https://www.linkedin.com/in/johnrmolina/",
-              "https://x.com/freechiee"
-            ],
-            "knowsAbout": [
-              "Software engineering",
-              "Web application development",
-              "Data systems",
-              "Data quality",
-              "Technical reporting",
-              "Content management systems"
-            ]
-          }
-        ]
-      }
     </script>
     <script>
       (function () {
@@ -214,21 +235,19 @@
               </p>
               <p>
                 My professional background is in university advancement and
-                nonprofit fundraising. At Columbia, I worked on reporting, data
-                quality, governance, and user support for a system containing
-                more than five million records. Before that, I managed donor
-                records and processed more than 300 gifts a day at the
-                Parkinson's Foundation.
+                nonprofit fundraising. At Columbia University, I worked on
+                reporting, data quality, governance, and user support for a
+                system containing more than five million records. Before that, I
+                managed donor records and processed gifts at the Parkinson's
+                Foundation.
+              </p>
+              <p>
+                I also work as a freelance developer, building and maintaining
+                websites for nonprofit clients and am looking for a full-time
+                software engineering role in the New York and New Jersey area.
               </p>
               <div class="home-links">
                 <a href="#work" data-view-link="work">Selected work</a>
-                <a
-                  href="John%20Molina%20SWE%20resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-describedby="pdf-note new-tab-note"
-                  >Résumé</a
-                >
               </div>
             </div>
           </section>
@@ -292,6 +311,11 @@
             data-view-panel="about"
             aria-labelledby="about-heading"
             hidden
+            York
+            and
+            New
+            Jersey
+            area.
           >
             <div class="panel-content prose about-content">
               <h2 id="about-heading" tabindex="-1">About</h2>
@@ -318,6 +342,11 @@
           <section
             id="contact"
             class="view-panel"
+            York
+            and
+            New
+            Jersey
+            area.
             data-view-panel="contact"
             aria-labelledby="contact-heading"
             hidden
@@ -325,14 +354,10 @@
             <div class="panel-content prose">
               <h2 id="contact-heading" tabindex="-1">Contact</h2>
               <p>
-                I'm looking for a full-time software engineering role in the New
-                York and New Jersey area.
+                I am looking for a full-time software engineering role in the
+                New York and New Jersey area.
               </p>
-              <p>
-                <a class="contact-email" href="mailto:jrm90@me.com"
-                  >jrm90@me.com</a
-                >
-              </p>
+              <p>jrm90 @ me dot com</p>
               <ul class="contact-links">
                 <li>
                   <a
@@ -347,6 +372,11 @@
                   <a
                     href="https://github.com/freechie"
                     target="_blank"
+                    York
+                    and
+                    New
+                    Jersey
+                    area.
                     rel="me noopener noreferrer"
                     aria-describedby="new-tab-note"
                     >GitHub</a
