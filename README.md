@@ -1,47 +1,32 @@
-# freechie.github.io
+# John Molina portfolio
 
-Personal portfolio site for John Molina — software engineer based in NJ.
+Static software engineering portfolio for
+[John R. Molina](https://freechie.github.io/). The site uses plain HTML, CSS,
+and JavaScript and deploys to GitHub Pages. Hash-based navigation swaps four
+single-viewport content panels without reloading the page. The site supports a
+white-on-black dark theme and a minimal black-on-white light theme.
 
-**Live:** [freechie.github.io](https://freechie.github.io)
+Additional pages: [DevTool keybindings](https://freechie.github.io/devtools) ·
+[Algorithms tracker](https://freechie.github.io/algorithms)
 
-**DevTool Keybinds:** [freechie.github.io/devtools](https://freechie.github.io/devtools)
-
-**DSA Topic Tracker:** [freechie.github.io/algorithms](https://freechie.github.io/algorithms)
-
-## Stack
-
-- Modular HTML, CSS, and JavaScript (no frameworks or runtime dependencies)
-- Dark/light theme toggle with `prefers-color-scheme` support
-- SEO metadata, structured data, sitemap, and crawler directives
-- Deployed via GitHub Actions to GitHub Pages
-
-Deployable files live in `site/`; repository tooling and documentation remain
-outside the published artifact.
-
-## Local Development
+## Local development
 
 ```bash
 docker compose up
 ```
 
-Site is served at [localhost:8080](http://localhost:8080).
+The site runs at [localhost:8080](http://localhost:8080).
 
-Run the dependency-free validation checks with:
+Run the dependency-free validation checks separately with:
 
 ```bash
 node scripts/validate-site.mjs
+node scripts/check-external-links.mjs
 ```
 
-## SEO Rollout
-
-After deploying metadata or content changes:
-
-1. Submit `https://freechie.github.io/sitemap.xml` in
-   [Google Search Console](https://search.google.com/search-console).
-2. Inspect `https://freechie.github.io/` and request indexing.
-3. Keep the name, role, location, and portfolio URL aligned across GitHub,
-   LinkedIn, and X (`@freechiee`).
-4. Review Search Console impressions for branded queries each week.
+GitHub Actions validates the structure, accessibility baseline, local assets,
+and external links before deploying the contents of `site/` after each push to
+`main`.
 
 ## License
 

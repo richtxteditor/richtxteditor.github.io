@@ -47,6 +47,19 @@ async function assertFileExists(reference, sourceDirectory) {
 }
 
 const html = await readFile(indexPath, "utf8");
+const readme = await readFile(path.join(repositoryRoot, "README.md"), "utf8");
+const foundationCss = await readFile(
+  path.join(siteRoot, "assets/css/foundation.css"),
+  "utf8",
+);
+const componentsCss = await readFile(
+  path.join(siteRoot, "assets/css/components.css"),
+  "utf8",
+);
+const appearanceJs = await readFile(
+  path.join(siteRoot, "assets/js/appearance.js"),
+  "utf8",
+);
 const sitemap = await readFile(path.join(siteRoot, "sitemap.xml"), "utf8");
 const robots = await readFile(path.join(siteRoot, "robots.txt"), "utf8");
 
@@ -59,6 +72,61 @@ assert(
   "Missing meta description",
 );
 assert(/<h1\b[^>]*>John R\. Molina<\/h1>/i.test(html), "Missing primary H1");
+assert(collect(/<h1\b/gi, html).length === 1, "Expected exactly one H1");
+assert(collect(/<main\b/gi, html).length === 1, "Expected exactly one main landmark");
+assert(collect(/<nav\b/gi, html).length === 1, "Expected exactly one navigation landmark");
+assert(
+  html.includes('<a href="#main" class="skip-link">'),
+  "Missing skip link to main content",
+);
+assert(
+  collect(/class="project"/gi, html).length === 3,
+  "Expected exactly three selected projects",
+);
+assert(
+  collect(/data-view-panel="[^"]+"/gi, html).length === 4,
+  "Expected exactly four single-page views",
+);
+assert(
+  collect(/data-project-visual="[^"]+"/gi, html).length === 3,
+  "Expected exactly three project architecture visuals",
+);
+assert(html.includes('id="theme-toggle"'), "Missing theme control");
+assert(
+  foundationCss.includes(':root[data-theme="light"]'),
+  "Missing light theme",
+);
+assert(
+  foundationCss.includes("--background: #000000") &&
+    foundationCss.includes("--background: #ffffff"),
+  "Theme backgrounds must remain black and white",
+);
+assert(!componentsCss.includes("grayscale("), "Portrait must remain full color");
+assert(foundationCss.includes(":focus-visible"), "Missing keyboard focus styles");
+assert(
+  foundationCss.includes("@media (prefers-reduced-motion: reduce)"),
+  "Missing reduced-motion support",
+);
+assert(
+  appearanceJs.includes('localStorage.setItem(THEME_KEY, nextTheme)'),
+  "Theme preference is not persisted",
+);
+for (const evidence of [
+  "Wagtail 8.0",
+  "29 tests",
+  "14 interactive figures",
+  "20 tests",
+]) {
+  assert(html.includes(evidence), `Missing project evidence: ${evidence}`);
+}
+for (const unsupportedClaim of ["Bloomberg", "SIPRI", "JUnit", "MySQL"]) {
+  assert(
+    !html.includes(unsupportedClaim),
+    `Unsupported project claim found: ${unsupportedClaim}`,
+  );
+}
+assert(!html.includes("skill-tag"), "Legacy skill pills are still present");
+assert(!readme.includes("/dsa"), "README still links to the missing DSA page");
 for (const name of [
   "John R. Molina",
   "John Molina",
@@ -122,8 +190,19 @@ const ids = collect(/\sid="([^"]+)"/gi, html);
 const idSet = new Set(ids);
 assert(ids.length === idSet.size, "Duplicate HTML IDs found");
 
+for (const imageTag of html.matchAll(/<img\b[^>]*>/gi)) {
+  assert(/\balt="[^"]*"/i.test(imageTag[0]), "Image is missing alt text");
+}
+
 for (const anchor of collect(/href="#([^"]+)"/gi, html)) {
   assert(idSet.has(anchor), `Missing anchor target: #${anchor}`);
+}
+
+for (const match of html.matchAll(/<a\b([^>]*\btarget="_blank"[^>]*)>/gi)) {
+  assert(
+    /\brel="[^"]*noopener[^"]*"/i.test(match[1]),
+    "External link opening a new tab is missing rel=noopener",
+  );
 }
 
 for (const references of collect(
@@ -164,6 +243,9 @@ for (const image of heroImages) {
   const imageStats = await stat(path.join(siteRoot, image));
   assert(imageStats.size <= 150_000, `${image} exceeds 150 KB`);
 }
+
+const socialImageStats = await stat(path.join(siteRoot, "og-image.png"));
+assert(socialImageStats.size <= 1_000_000, "og-image.png exceeds 1 MB");
 
 if (errors.length) {
   console.error(`Site validation failed with ${errors.length} error(s):`);

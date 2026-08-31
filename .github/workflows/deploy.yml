@@ -26,6 +26,7 @@ jobs:
       - name: Validate site
         run: |
           node scripts/validate-site.mjs
+          node scripts/check-external-links.mjs
           xmllint --noout site/sitemap.xml
           tidy --warn-proprietary-attributes no -errors -quiet site/index.html
       - uses: actions/configure-pages@v5
