@@ -66,6 +66,10 @@ const appearanceJs = await readFile(
   path.join(siteRoot, "assets/js/appearance.js"),
   "utf8",
 );
+const viewsJs = await readFile(
+  path.join(siteRoot, "assets/js/views.js"),
+  "utf8",
+);
 const sitemap = await readFile(path.join(siteRoot, "sitemap.xml"), "utf8");
 const robots = await readFile(path.join(siteRoot, "robots.txt"), "utf8");
 
@@ -91,13 +95,43 @@ try {
   errors.push(`Could not inspect resume PDF: ${error.message}`);
 }
 
+const titleMatch = html.match(/<title>([^<]+)<\/title>/i);
+const seoTitle = titleMatch?.[1].trim() ?? "";
+assert(seoTitle, "Missing SEO title");
 assert(
-  html.includes("<title>John R. Molina | Software Engineer in New Jersey</title>"),
-  "Missing SEO title",
+  /John (?:R\.|Richard) Molina/.test(seoTitle),
+  "SEO title is missing the name",
 );
+assert(
+  seoTitle.includes("Software Engineer"),
+  "SEO title is missing the professional role",
+);
+assert(collect(/<title\b/gi, html).length === 1, "Expected exactly one title");
 assert(
   /<meta\s+name="description"\s+content="[^"]+"\s*\/>/i.test(html),
   "Missing meta description",
+);
+assert(
+  /New York metropolitan area/i.test(html),
+  "Site copy is missing the target market",
+);
+assert(/remote roles/i.test(html), "Site metadata is missing remote roles");
+assert(
+  !/New York metro area/i.test(`${html}\n${viewsJs}`),
+  "Use New York metropolitan area instead of New York metro area",
+);
+assert(
+  viewsJs.includes("const homeTitle = document.title;"),
+  "Home navigation title must use the HTML title",
+);
+assert(!/mailto:/i.test(html), "Email address must not use a mailto link");
+assert(
+  collect(/class="contact-address"/gi, html).length === 2,
+  "Expected the obfuscated email address in the profile and Contact view",
+);
+assert(
+  collect(/jrm90 @ me dot com/gi, html).length === 2,
+  "Expected two copies of the obfuscated email address",
 );
 assert(/<h1\b[^>]*>John R\. Molina<\/h1>/i.test(html), "Missing primary H1");
 assert(collect(/<h1\b/gi, html).length === 1, "Expected exactly one H1");

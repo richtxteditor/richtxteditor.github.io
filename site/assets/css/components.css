@@ -61,12 +61,17 @@
 }
 
 .profile-links a,
+.profile-links .contact-address,
 .site-credit {
   font-size: 0.84rem;
 }
 
-.profile-links a {
+.profile-links a,
+.profile-links .contact-address {
   color: var(--muted);
+}
+
+.profile-links a {
   text-decoration-color: var(--line-strong);
 }
 
@@ -253,11 +258,6 @@ main {
   color: var(--text);
 }
 
-.contact-email {
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
 .contact-links {
   display: flex;
   flex-wrap: wrap;
@@ -266,7 +266,8 @@ main {
   list-style: none;
 }
 
-.contact-links a {
+.contact-links a,
+.contact-links .contact-address {
   color: var(--muted);
   font-size: 0.94rem;
 }
@@ -431,6 +432,7 @@ main {
   }
 
   .profile-links a,
+  .profile-links .contact-address,
   .site-credit {
     font-size: 0.78rem;
   }

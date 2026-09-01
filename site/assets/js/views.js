@@ -20,6 +20,7 @@ export function initViewNavigation() {
   const navLinks = Array.from(
     document.querySelectorAll(".nav-links [data-view-link]"),
   );
+  const homeTitle = document.title;
 
   if (!panels.length || !links.length) return;
 
@@ -45,7 +46,7 @@ export function initViewNavigation() {
 
     document.title =
       selectedView === "home"
-        ? "John R. Molina | Software Engineer in New Jersey"
+        ? homeTitle
         : `${selectedView[0].toUpperCase()}${selectedView.slice(1)} | John R. Molina`;
   }
 
