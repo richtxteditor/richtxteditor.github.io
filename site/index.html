@@ -142,24 +142,31 @@
 
     <div class="site-shell">
       <header class="profile-header">
-        <picture class="profile-portrait">
-          <source
-            type="image/webp"
-            srcset="
-              assets/images/john-molina-192.webp 192w,
-              assets/images/john-molina-560.webp 560w
-            "
-            sizes="(max-width: 760px) 84px, 230px"
-          />
-          <img
-            src="prof_pic.png"
-            alt="John R. Molina smiling in a sunlit room"
-            width="560"
-            height="560"
-            decoding="async"
-            fetchpriority="high"
-          />
-        </picture>
+        <a
+          class="profile-portrait"
+          href="#home"
+          data-view-link="home"
+          aria-label="Go to home page"
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                assets/images/john-molina-192.webp 192w,
+                assets/images/john-molina-560.webp 560w
+              "
+              sizes="(max-width: 760px) 84px, 230px"
+            />
+            <img
+              src="prof_pic.png"
+              alt="John R. Molina smiling in a sunlit room"
+              width="560"
+              height="560"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
+        </a>
 
         <div class="profile-copy">
           <h1>John R. Molina</h1>
@@ -174,6 +181,13 @@
             rel="noopener noreferrer"
             aria-describedby="pdf-note new-tab-note"
             >Résumé</a
+          >
+          <a
+            href="https://github.com/freechie"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-describedby="new-tab-note"
+            >GitHub</a
           >
         </div>
 
