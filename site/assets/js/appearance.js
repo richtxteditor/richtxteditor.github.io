@@ -22,7 +22,6 @@ export function initAppearance() {
   function applyTheme(theme) {
     document.documentElement.dataset.theme = theme;
     const nextTheme = theme === "dark" ? "light" : "dark";
-    button.textContent = `${nextTheme[0].toUpperCase()}${nextTheme.slice(1)}`;
     button.setAttribute("aria-label", `Use ${nextTheme} theme`);
   }
 
