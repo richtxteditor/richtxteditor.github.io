@@ -1,7 +1,7 @@
 # My Github portfolio
 
 Static software engineering portfolio for
-[me](https://freechie.github.io/). The site uses plain HTML, CSS,
+[myself](https://freechie.github.io/). The site uses plain HTML, CSS,
 and JavaScript and deploys to GitHub Pages. Hash-based navigation swaps four
 single-viewport content panels without reloading the page. The site supports a
 white-on-black dark theme and a minimal black-on-white light theme.
