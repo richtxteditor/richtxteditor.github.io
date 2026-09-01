@@ -129,12 +129,18 @@ nav {
 }
 
 .nav-links a:hover,
-.nav-links a[aria-current="page"],
-#theme-toggle:hover {
+#theme-toggle:hover,
+:root[data-view="home"] .nav-links [data-view-link="home"],
+:root[data-view="work"] .nav-links [data-view-link="work"],
+:root[data-view="about"] .nav-links [data-view-link="about"],
+:root[data-view="contact"] .nav-links [data-view-link="contact"] {
   color: var(--text);
 }
 
-.nav-links a[aria-current="page"]::after {
+:root[data-view="home"] .nav-links [data-view-link="home"]::after,
+:root[data-view="work"] .nav-links [data-view-link="work"]::after,
+:root[data-view="about"] .nav-links [data-view-link="about"]::after,
+:root[data-view="contact"] .nav-links [data-view-link="contact"]::after {
   position: absolute;
   right: 0;
   bottom: -1px;
@@ -173,10 +179,38 @@ main {
 .view-panel {
   position: absolute;
   inset: 0;
+  display: none;
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--background);
   scrollbar-gutter: stable;
+}
+
+:root[data-view="home"] #home,
+:root[data-view="work"] #work,
+:root[data-view="about"] #about,
+:root[data-view="contact"] #contact {
+  display: block;
+}
+
+:root {
+  view-transition-name: none;
+}
+
+.view-panel:not([hidden]) {
+  view-transition-name: portfolio-content;
+}
+
+::view-transition-group(portfolio-content),
+::view-transition-old(portfolio-content),
+::view-transition-new(portfolio-content) {
+  animation-duration: 170ms;
+  animation-timing-function: ease-out;
+}
+
+::view-transition-old(portfolio-content),
+::view-transition-new(portfolio-content) {
+  mix-blend-mode: normal;
 }
 
 .panel-content {
