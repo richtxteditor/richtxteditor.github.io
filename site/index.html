@@ -131,11 +131,18 @@
               : "dark";
         }
         root.dataset.theme = theme;
+
+        var requestedView = window.location.hash.slice(1);
+        root.dataset.view = ["home", "work", "about", "contact"].includes(
+          requestedView,
+        )
+          ? requestedView
+          : "home";
       })();
     </script>
     <link rel="stylesheet" href="assets/css/foundation.css?v=9" />
-    <link rel="stylesheet" href="assets/css/components.css?v=12" />
-    <script type="module" src="assets/js/portfolio.js?v=9"></script>
+    <link rel="stylesheet" href="assets/css/components.css?v=15" />
+    <script type="module" src="assets/js/portfolio.js?v=11"></script>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to current content</a>
@@ -200,7 +207,7 @@
         <nav aria-label="Portfolio navigation">
           <ul class="nav-links">
             <li>
-              <a href="#home" data-view-link="home" aria-current="page">Home</a>
+              <a href="#home" data-view-link="home">Home</a>
             </li>
             <li><a href="#work" data-view-link="work">Work</a></li>
             <li><a href="#about" data-view-link="about">About</a></li>
@@ -278,7 +285,6 @@
             class="view-panel"
             data-view-panel="work"
             aria-labelledby="work-heading"
-            hidden
           >
             <div class="panel-content work-content">
               <h2 id="work-heading" tabindex="-1">Selected work</h2>
@@ -333,7 +339,6 @@
             class="view-panel"
             data-view-panel="about"
             aria-labelledby="about-heading"
-            hidden
           >
             <div class="panel-content prose about-content">
               <h2 id="about-heading" tabindex="-1">About</h2>
@@ -367,7 +372,6 @@
             class="view-panel"
             data-view-panel="contact"
             aria-labelledby="contact-heading"
-            hidden
           >
             <div class="panel-content prose">
               <h2 id="contact-heading" tabindex="-1">Contact</h2>

@@ -24,30 +24,47 @@ export function initViewNavigation() {
 
   if (!panels.length || !links.length) return;
 
-  function activate(view, moveFocus = false) {
+  function activate(view, moveFocus = false, animate = false) {
     const selectedView = VIEW_IDS.includes(view) ? view : "home";
+    const currentView = panels.find((panel) => !panel.hidden)?.dataset.viewPanel;
 
-    panels.forEach((panel) => {
-      const isActive = panel.dataset.viewPanel === selectedView;
-      panel.hidden = !isActive;
+    function updateView() {
+      document.documentElement.dataset.view = selectedView;
 
-      if (isActive && moveFocus) {
-        panel.querySelector("h1, h2")?.focus({ preventScroll: true });
-      }
-    });
+      panels.forEach((panel) => {
+        const isActive = panel.dataset.viewPanel === selectedView;
+        panel.hidden = !isActive;
 
-    navLinks.forEach((link) => {
-      if (link.dataset.viewLink === selectedView) {
-        link.setAttribute("aria-current", "page");
-      } else {
-        link.removeAttribute("aria-current");
-      }
-    });
+        if (isActive && moveFocus) {
+          panel.querySelector("h1, h2")?.focus({ preventScroll: true });
+        }
+      });
 
-    document.title =
-      selectedView === "home"
-        ? homeTitle
-        : `${selectedView[0].toUpperCase()}${selectedView.slice(1)} | John R. Molina`;
+      navLinks.forEach((link) => {
+        if (link.dataset.viewLink === selectedView) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+
+      document.title =
+        selectedView === "home"
+          ? homeTitle
+          : `${selectedView[0].toUpperCase()}${selectedView.slice(1)} | John R. Molina`;
+    }
+
+    const canAnimate =
+      animate &&
+      currentView !== selectedView &&
+      typeof document.startViewTransition === "function" &&
+      !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+    if (canAnimate) {
+      document.startViewTransition(updateView);
+    } else {
+      updateView();
+    }
   }
 
   links.forEach((link) => {
@@ -57,7 +74,7 @@ export function initViewNavigation() {
 
       event.preventDefault();
       window.history.pushState(null, "", `#${view}`);
-      activate(view, event.detail === 0);
+      activate(view, event.detail === 0, true);
     });
   });
 
