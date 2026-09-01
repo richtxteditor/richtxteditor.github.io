@@ -32,10 +32,7 @@
       property="og:image"
       content="https://freechie.github.io/og-image.png"
     />
-    <meta
-      property="og:image:alt"
-      content="John R. Molina, software engineer"
-    />
+    <meta property="og:image:alt" content="John R. Molina, software engineer" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -63,7 +60,12 @@
             "@id": "https://freechie.github.io/#website",
             "url": "https://freechie.github.io/",
             "name": "John R. Molina",
-            "alternateName": ["John Molina", "Richie Molina", "Richard Molina", "Richie"]
+            "alternateName": [
+              "John Molina",
+              "Richie Molina",
+              "Richard Molina",
+              "Richie"
+            ]
           },
           {
             "@type": "ProfilePage",
@@ -131,9 +133,9 @@
         root.dataset.theme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="assets/css/foundation.css?v=8" />
-    <link rel="stylesheet" href="assets/css/components.css?v=9" />
-    <script type="module" src="assets/js/portfolio.js?v=8"></script>
+    <link rel="stylesheet" href="assets/css/foundation.css?v=9" />
+    <link rel="stylesheet" href="assets/css/components.css?v=12" />
+    <script type="module" src="assets/js/portfolio.js?v=9"></script>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to current content</a>
@@ -162,7 +164,6 @@
         <div class="profile-copy">
           <h1>John R. Molina</h1>
           <p>Software engineer</p>
-          <p>Northern New Jersey</p>
         </div>
 
         <div class="profile-links">
@@ -196,7 +197,23 @@
                 type="button"
                 aria-label="Use light theme"
               >
-                Light
+                <svg
+                  class="theme-icon theme-icon--sun"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="4" />
+                  <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+                  />
+                </svg>
+                <svg
+                  class="theme-icon theme-icon--moon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+                </svg>
               </button>
             </li>
           </ul>
@@ -215,22 +232,26 @@
             <div class="panel-content prose">
               <h2 id="home-heading" tabindex="-1">What I do</h2>
               <p>
-                I build web applications and tools for people who work with
-                complex data.
+                My background is in university advancement and nonprofit
+                fundraising.
               </p>
               <p>
-                My professional background is in university advancement and
-                nonprofit fundraising. At Columbia University, I worked on
-                reporting, data quality, governance, and user support for a
-                system containing more than five million records. Before that, I
-                managed donor records and processed gifts at the Parkinson's
-                Foundation.
+                At Columbia University, I wrote and audited reports, managed
+                data quality and governance, and provided technical support for
+                the Alumni & Development office's advancement system containing
+                more than five million active constituent records.
               </p>
               <p>
-                I also work as a freelance developer, building and maintaining
-                websites for nonprofit clients. I am looking for a full-time
-                software engineering role, either remote or based in the New
-                York metropolitan area.
+                Prior to Columbia, I supported constituent record data quality
+                and processed gifts at the Parkinson's Foundation.
+              </p>
+              <p>
+                I currently work as a freelance developer, building and
+                maintaining websites for nonprofit clients on a pro-bono basis.
+              </p>
+              <p>
+                I am looking for a full-time software engineering role, either
+                remote or based in the New York metropolitan area.
               </p>
               <div class="home-links">
                 <a href="#work" data-view-link="work">Selected work</a>
@@ -257,8 +278,9 @@
                     ><strong>Portfolio Django</strong></a
                   >
                   <p>
-                    Publishing platform restored on Django 6.0, Wagtail 8.0, and
-                    React. 29 tests; local and Docker workflows verified.
+                    Portfolio website restored on Django 6.0, Wagtail 8.0, and
+                    React. 29 tests; local and Docker workflows verified. WIP to
+                    standardize frontend design for a future website.
                   </p>
                 </li>
                 <li class="project">
@@ -284,7 +306,8 @@
                   >
                   <p>
                     Server-rendered catalog and persistent cart built with
-                    Next.js, TypeScript, and PostgreSQL.
+                    Next.js, TypeScript, and PostgreSQL for my mom's food shop.
+                    WIP
                   </p>
                 </li>
               </ul>
@@ -300,22 +323,27 @@
           >
             <div class="panel-content prose about-content">
               <h2 id="about-heading" tabindex="-1">About</h2>
+              <p>I am drawn to things that invoke experimentation.</p>
               <p>
-                I am drawn to things that invite experimentation. Video games,
-                music software, guitar pedals, and interactive art have all
-                shaped the way I think about technology. I enjoy using these
-                tools, but I am equally interested in how they are designed and
-                built.
+                Video games, photography, photo & video editing software, music
+                software & hardware, and interactive art have all shaped the
+                way I approach life with technology. I enjoy using these tools
+                for creativity and am equally and often times more interested in
+                their low-level design and implementation.
               </p>
               <p>
-                I studied Media Arts and Film before earning a Computer Science
-                degree at Montclair State University. That background taught me
-                to consider both how software works and how people experience
-                it.
+                I studied Media Arts and Film before recently earning a Computer
+                Science degree at Montclair State University as a
+                first-generation college student.
               </p>
               <p>
-                I also work as a freelance developer, building and maintaining
-                websites for nonprofit clients.
+                Academic and professional experiences have taught me how to
+                tackle difficult problems while communicating my thought process and working alongside others to implement
+                a correct, working solution.
+              </p>
+              <p>
+                I work as a freelance developer, building and maintaining
+                websites for nonprofit clients on a pro-bono basis.
               </p>
             </div>
           </section>
@@ -331,7 +359,7 @@
               <h2 id="contact-heading" tabindex="-1">Contact</h2>
               <p>
                 I am looking for a full-time software engineering role, either
-                remote or based in the New York metropolitan area.
+                remote or based in the New York Metropolitan rea.
               </p>
               <ul class="contact-links">
                 <li>
