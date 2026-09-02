@@ -1,0 +1,14 @@
+{
+  "name": "freechie.github.io portfolio",
+  "install": "bash .cursor/install.sh",
+  "start": "bash .cursor/start.sh",
+  "terminals": [
+    {
+      "name": "web",
+      "command": "docker compose up"
+    }
+  ],
+  "ports": [
+    8080
+  ]
+}
