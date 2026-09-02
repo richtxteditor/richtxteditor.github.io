@@ -185,24 +185,25 @@ assert(
   appearanceJs.includes('localStorage.setItem(THEME_KEY, nextTheme)'),
   "Theme preference is not persisted",
 );
+const htmlCollapsed = html.replace(/\s+/g, " ");
 assert(
   /more than five million active constituent records/i.test(html),
   "Missing constituent-system scale",
 );
 assert(
-  html.includes("$5.6&nbsp;billion") &&
-    html.includes("199,000 donors") &&
-    html.includes("160,000 engaged alumni"),
+  htmlCollapsed.includes("$5.6&nbsp;billion") &&
+    htmlCollapsed.includes("199,000 donors") &&
+    htmlCollapsed.includes("160,000 engaged alumni"),
   "Missing Columbia Commitment close metrics",
 );
 assert(
-  html.includes("173,000-donor") &&
-    html.includes("150,000-engaged-alumni") &&
-    html.includes("103,000 first-time"),
+  htmlCollapsed.includes("173,000-donor") &&
+    htmlCollapsed.includes("150,000-engaged-alumni") &&
+    htmlCollapsed.includes("103,000 first-time"),
   "Missing Columbia Commitment goals or first-time donors",
 );
 assert(
-  html.includes("May 2017") && html.includes("$2&nbsp;billion"),
+  htmlCollapsed.includes("May 2017") && htmlCollapsed.includes("$2&nbsp;billion"),
   "Missing Columbia Commitment 2017 launch snapshot",
 );
 for (const evidence of [
