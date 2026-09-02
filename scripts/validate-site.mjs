@@ -185,6 +185,27 @@ assert(
   appearanceJs.includes('localStorage.setItem(THEME_KEY, nextTheme)'),
   "Theme preference is not persisted",
 );
+const htmlCollapsed = html.replace(/\s+/g, " ");
+assert(
+  /more than five million active constituent records/i.test(html),
+  "Missing constituent-system scale",
+);
+assert(
+  htmlCollapsed.includes("$5.6&nbsp;billion") &&
+    htmlCollapsed.includes("199,000 donors") &&
+    htmlCollapsed.includes("160,000 engaged alumni"),
+  "Missing Columbia Commitment close metrics",
+);
+assert(
+  htmlCollapsed.includes("173,000-donor") &&
+    htmlCollapsed.includes("150,000-engaged-alumni") &&
+    htmlCollapsed.includes("103,000 first-time"),
+  "Missing Columbia Commitment goals or first-time donors",
+);
+assert(
+  htmlCollapsed.includes("May 2017") && htmlCollapsed.includes("$2&nbsp;billion"),
+  "Missing Columbia Commitment 2017 launch snapshot",
+);
 for (const evidence of [
   "Wagtail 8.0",
   "29 tests",
