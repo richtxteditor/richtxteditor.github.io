@@ -37,6 +37,7 @@
 }
 
 .profile-copy h1 {
+  font-family: var(--heading);
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.018em;
@@ -44,7 +45,7 @@
 }
 
 .profile-copy p {
-  color: var(--muted);
+  color: var(--nav);
   font-size: 0.94rem;
   line-height: 1.55;
 }
@@ -68,14 +69,15 @@
 
 .profile-links a,
 .profile-links .contact-address {
-  color: var(--muted);
+  color: var(--nav);
 }
 
 .profile-links a {
   text-decoration-color: var(--line-strong);
 }
 
-.profile-links a:hover {
+.profile-links a:hover,
+.profile-links a:active {
   color: var(--link-hover);
   text-decoration-color: var(--link-hover);
 }
@@ -119,9 +121,10 @@ nav {
   align-items: center;
   border: 0;
   background: transparent;
-  color: var(--muted);
+  color: var(--nav);
   cursor: pointer;
   font: inherit;
+  font-family: var(--heading);
   font-size: 0.88rem;
   font-weight: 500;
   line-height: 1;
@@ -129,7 +132,9 @@ nav {
 }
 
 .nav-links a:hover,
-#theme-toggle:hover {
+.nav-links a:active,
+#theme-toggle:hover,
+#theme-toggle:active {
   color: var(--link-hover);
 }
 
@@ -137,7 +142,7 @@ nav {
 :root[data-view="work"] .nav-links [data-view-link="work"],
 :root[data-view="about"] .nav-links [data-view-link="about"],
 :root[data-view="contact"] .nav-links [data-view-link="contact"] {
-  color: var(--text);
+  color: var(--link-hover);
 }
 
 :root[data-view="home"] .nav-links [data-view-link="home"]::after,
@@ -149,7 +154,7 @@ nav {
   bottom: -1px;
   left: 0;
   height: 1px;
-  background: var(--text);
+  background: var(--link-hover);
   content: "";
 }
 
@@ -171,6 +176,18 @@ nav {
 :root[data-theme="dark"] .theme-icon--moon,
 :root[data-theme="light"] .theme-icon--sun {
   display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-icon--moon {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .theme-icon--sun {
+    display: none;
+  }
 }
 
 main {
@@ -226,6 +243,7 @@ main {
 }
 
 .panel-content h2 {
+  font-family: var(--heading);
   font-size: clamp(1.75rem, 3vw, 2rem);
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -263,7 +281,9 @@ main {
 }
 
 .prose a:hover,
-.home-links a:hover {
+.prose a:active,
+.home-links a:hover,
+.home-links a:active {
   color: var(--link-hover);
   text-decoration-color: var(--link-hover);
 }
@@ -299,7 +319,8 @@ main {
   text-decoration-color: var(--line-strong);
 }
 
-.project > a:hover {
+.project > a:hover,
+.project > a:active {
   color: var(--link-hover);
   text-decoration-color: var(--link-hover);
 }
@@ -333,7 +354,8 @@ main {
   font-size: 0.94rem;
 }
 
-.contact-links a:hover {
+.contact-links a:hover,
+.contact-links a:active {
   color: var(--link-hover);
   text-decoration-color: var(--link-hover);
 }

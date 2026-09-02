@@ -159,6 +159,14 @@ assert(
   "Missing light theme",
 );
 assert(
+  foundationCss.includes("@media (prefers-color-scheme: light)"),
+  "Missing system color-scheme detection",
+);
+assert(
+  /a:active/.test(foundationCss),
+  "Active links must use the accent color",
+);
+assert(
   foundationCss.includes("--background: #171717") &&
     foundationCss.includes("--background: #f6f6f3"),
   "Theme backgrounds must use the approved soft dark and light values",

@@ -15,6 +15,13 @@ function getSystemTheme() {
     : "dark";
 }
 
+function getAppliedTheme() {
+  const explicit = document.documentElement.dataset.theme;
+  return explicit === "light" || explicit === "dark"
+    ? explicit
+    : getSystemTheme();
+}
+
 export function initAppearance() {
   const button = document.getElementById("theme-toggle");
   if (!button) return;
@@ -26,8 +33,7 @@ export function initAppearance() {
   }
 
   button.addEventListener("click", () => {
-    const nextTheme =
-      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    const nextTheme = getAppliedTheme() === "dark" ? "light" : "dark";
     applyTheme(nextTheme);
 
     try {

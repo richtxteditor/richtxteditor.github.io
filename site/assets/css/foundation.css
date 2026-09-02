@@ -11,13 +11,30 @@
   --background: #171717;
   --text: #f4f4f1;
   --muted: #b4b4ae;
+  --nav: #d6d6d0;
   --faint: #8b8b85;
   --line: #373735;
   --line-strong: #565652;
-  --link-hover: #d4a05a;
+  --link-hover: #f0a53a;
   --nav-height: 60px;
-  --sans:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+    sans-serif;
+  --heading: "IBM Plex Sans", Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --background: #f6f6f3;
+    --text: #181818;
+    --muted: #5f5f5a;
+    --nav: #888883;
+    --faint: #70706b;
+    --line: #deded8;
+    --line-strong: #c3c3bc;
+    --link-hover: #c56b10;
+  }
 }
 
 :root[data-theme="light"] {
@@ -25,10 +42,11 @@
   --background: #f6f6f3;
   --text: #181818;
   --muted: #5f5f5a;
+  --nav: #888883;
   --faint: #70706b;
   --line: #deded8;
   --line-strong: #c3c3bc;
-  --link-hover: #b45309;
+  --link-hover: #c56b10;
 }
 
 html,
@@ -61,6 +79,11 @@ a {
   transition:
     color 160ms ease,
     text-decoration-color 160ms ease;
+}
+
+a:active {
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 .skip-link {
@@ -114,10 +137,11 @@ a {
 @media (prefers-contrast: more) {
   :root {
     --muted: #d7d7d2;
+    --nav: #ecece7;
     --faint: #b8b7b2;
     --line: #66645f;
     --line-strong: #aaa8a1;
-    --link-hover: #e8bc72;
+    --link-hover: #f0c56a;
   }
 
   :focus-visible {
@@ -126,9 +150,21 @@ a {
 
   :root[data-theme="light"] {
     --muted: #3f3f3c;
+    --nav: #5c5c57;
     --faint: #52524e;
     --line: #999994;
     --line-strong: #555551;
-    --link-hover: #92400e;
+    --link-hover: #a34f0c;
+  }
+}
+
+@media (prefers-contrast: more) and (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --muted: #3f3f3c;
+    --nav: #5c5c57;
+    --faint: #52524e;
+    --line: #999994;
+    --line-strong: #555551;
+    --link-hover: #a34f0c;
   }
 }
