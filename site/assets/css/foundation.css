@@ -14,6 +14,7 @@
   --faint: #8b8b85;
   --line: #373735;
   --line-strong: #565652;
+  --link-hover: #d4a05a;
   --nav-height: 60px;
   --sans:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -27,6 +28,7 @@
   --faint: #70706b;
   --line: #deded8;
   --line-strong: #c3c3bc;
+  --link-hover: #b45309;
 }
 
 html,
@@ -56,6 +58,9 @@ a {
   color: inherit;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease;
 }
 
 .skip-link {
@@ -112,6 +117,7 @@ a {
     --faint: #b8b7b2;
     --line: #66645f;
     --line-strong: #aaa8a1;
+    --link-hover: #e8bc72;
   }
 
   :focus-visible {
@@ -123,5 +129,6 @@ a {
     --faint: #52524e;
     --line: #999994;
     --line-strong: #555551;
+    --link-hover: #92400e;
   }
 }

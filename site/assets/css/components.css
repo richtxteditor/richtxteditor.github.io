@@ -76,8 +76,8 @@
 }
 
 .profile-links a:hover {
-  color: var(--text);
-  text-decoration-color: var(--text);
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 .site-credit {
@@ -129,7 +129,10 @@ nav {
 }
 
 .nav-links a:hover,
-#theme-toggle:hover,
+#theme-toggle:hover {
+  color: var(--link-hover);
+}
+
 :root[data-view="home"] .nav-links [data-view-link="home"],
 :root[data-view="work"] .nav-links [data-view-link="work"],
 :root[data-view="about"] .nav-links [data-view-link="about"],
@@ -259,8 +262,10 @@ main {
   text-decoration-color: var(--line-strong);
 }
 
-.prose a:hover {
-  text-decoration-color: var(--text);
+.prose a:hover,
+.home-links a:hover {
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 .home-links {
@@ -295,7 +300,8 @@ main {
 }
 
 .project > a:hover {
-  text-decoration-color: var(--text);
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 .project strong {
@@ -328,7 +334,8 @@ main {
 }
 
 .contact-links a:hover {
-  color: var(--text);
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 @media (max-width: 760px) {
