@@ -163,6 +163,14 @@ assert(
   "Missing system color-scheme detection",
 );
 assert(
+  foundationCss.includes(':root[data-theme="dark"]'),
+  "Missing explicit dark theme color-scheme override",
+);
+assert(
+  !html.includes("matchMedia"),
+  "Head script must not assign data-theme from prefers-color-scheme",
+);
+assert(
   /a:active/.test(foundationCss),
   "Active links must use the accent color",
 );
@@ -190,8 +198,16 @@ assert(
   "Missing reduced-motion support",
 );
 assert(
-  appearanceJs.includes('localStorage.setItem(THEME_KEY, nextTheme)'),
+  appearanceJs.includes("localStorage.setItem(THEME_KEY, nextTheme)"),
   "Theme preference is not persisted",
+);
+assert(
+  appearanceJs.includes("localStorage.removeItem(THEME_KEY)"),
+  "Returning to the system theme must clear the stored override",
+);
+assert(
+  appearanceJs.includes("(prefers-color-scheme: dark)"),
+  "System theme detection must treat dark as the positive signal",
 );
 for (const evidence of [
   "Wagtail 8.0",

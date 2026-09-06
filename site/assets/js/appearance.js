@@ -10,9 +10,9 @@ function readStoredTheme() {
 }
 
 function getSystemTheme() {
-  return window.matchMedia?.("(prefers-color-scheme: light)").matches
-    ? "light"
-    : "dark";
+  const darkScheme = window.matchMedia?.("(prefers-color-scheme: dark)");
+  if (!darkScheme) return "dark";
+  return darkScheme.matches ? "dark" : "light";
 }
 
 function getAppliedTheme() {
@@ -22,19 +22,46 @@ function getAppliedTheme() {
     : getSystemTheme();
 }
 
+function followSystem() {
+  delete document.documentElement.dataset.theme;
+}
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+}
+
 export function initAppearance() {
   const button = document.getElementById("theme-toggle");
   if (!button) return;
 
-  function applyTheme(theme) {
-    document.documentElement.dataset.theme = theme;
-    const nextTheme = theme === "dark" ? "light" : "dark";
+  function syncToggleLabel() {
+    const nextTheme = getAppliedTheme() === "dark" ? "light" : "dark";
     button.setAttribute("aria-label", `Use ${nextTheme} theme`);
+  }
+
+  function applyOverride(theme) {
+    applyTheme(theme);
+    syncToggleLabel();
+  }
+
+  function clearOverride() {
+    followSystem();
+    syncToggleLabel();
   }
 
   button.addEventListener("click", () => {
     const nextTheme = getAppliedTheme() === "dark" ? "light" : "dark";
-    applyTheme(nextTheme);
+    if (nextTheme === getSystemTheme()) {
+      clearOverride();
+      try {
+        window.localStorage.removeItem(THEME_KEY);
+      } catch (_error) {
+        // Following the system theme for this page view is enough.
+      }
+      return;
+    }
+
+    applyOverride(nextTheme);
 
     try {
       window.localStorage.setItem(THEME_KEY, nextTheme);
@@ -43,10 +70,12 @@ export function initAppearance() {
     }
   });
 
-  const colorScheme = window.matchMedia?.("(prefers-color-scheme: light)");
+  const colorScheme = window.matchMedia?.("(prefers-color-scheme: dark)");
   colorScheme?.addEventListener?.("change", () => {
-    if (!readStoredTheme()) applyTheme(getSystemTheme());
+    if (!readStoredTheme()) clearOverride();
   });
 
-  applyTheme(readStoredTheme() || getSystemTheme());
+  const stored = readStoredTheme();
+  if (stored) applyOverride(stored);
+  else clearOverride();
 }

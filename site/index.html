@@ -123,14 +123,9 @@
         } catch (_error) {
           theme = "";
         }
-        if (theme !== "light" && theme !== "dark") {
-          theme =
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: light)").matches
-              ? "light"
-              : "dark";
+        if (theme === "light" || theme === "dark") {
+          root.dataset.theme = theme;
         }
-        root.dataset.theme = theme;
 
         var requestedView = window.location.hash.slice(1);
         root.dataset.view = ["home", "work", "about", "contact"].includes(
@@ -146,9 +141,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
     />
-    <link rel="stylesheet" href="assets/css/foundation.css?v=17" />
+    <link rel="stylesheet" href="assets/css/foundation.css?v=18" />
     <link rel="stylesheet" href="assets/css/components.css?v=24" />
-    <script type="module" src="assets/js/portfolio.js?v=14"></script>
+    <script type="module" src="assets/js/portfolio.js?v=15"></script>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to current content</a>

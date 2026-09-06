@@ -49,6 +49,10 @@
   --link-hover: #c56b10;
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 html,
 body {
   width: 100%;
